@@ -48,10 +48,10 @@ export const connect = () => {
           method: "net_version",
         });
         // const NetworkData = await SmartContract.networks[networkId];
-        if (networkId == 137) {
+        if (networkId == 4) {
           const SmartContractObj = new Web3EthContract(
             SmartContract,
-            "0x827acb09a2dc20e39c9aad7f7190d9bc53534192"
+            "0x4bc743489f0B15A3ec58d92F346D79B2062404F6"
           );
           dispatch(
             connectSuccess({
@@ -69,7 +69,7 @@ export const connect = () => {
           });
           // Add listeners end
         } else {
-          dispatch(connectFailed("Change network to Polygon."));
+          dispatch(connectFailed("Change network to Rinkeby."));
         }
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));
